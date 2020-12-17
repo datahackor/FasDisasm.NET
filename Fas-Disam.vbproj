@@ -1,0 +1,332 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <MyType>WindowsForms</MyType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2039140D-8D88-406C-B4A6-B67988A559F7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>FasDisasm</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>FasDisasm.FrmMain</StartupObject>
+    <AssemblyMajorVersion>1</AssemblyMajorVersion>
+    <AssemblyMinorVersion>11</AssemblyMinorVersion>
+    <AssemblyRevisionNumber>32</AssemblyRevisionNumber>
+    <GenerateRevisionNumber>True</GenerateRevisionNumber>
+    <AssemblyCompanyName>cosl</AssemblyCompanyName>
+    <StartWithIE>False</StartWithIE>
+    <ApplicationIcon>Fas-Disam.ico</ApplicationIcon>
+    <RootNamespace>FasDisasm</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\bin\</OutputPath>
+    <DocumentationFile>FasDisasm.xml</DocumentationFile>
+    <DebugSymbols>True</DebugSymbols>
+    <DefineDebug>True</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <DefineConstants>DoDebug = 1 : Win32=True</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\bin\</OutputPath>
+    <DocumentationFile>FasDisasm.xml</DocumentationFile>
+    <DebugSymbols>False</DebugSymbols>
+    <DefineDebug>False</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <DefineConstants>DoDebug = 1 : Win32=True</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Name>Microsoft.VisualBasic.Compatibility</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.XML">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="AxComctlLib">
+      <Guid>{6B7E6392-850A-101B-AFC0-4210102A8DA7}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <WrapperTool>aximp</WrapperTool>
+    </COMReference>
+    <COMReference Include="ComctlLib">
+      <Guid>{6B7E6392-850A-101B-AFC0-4210102A8DA7}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Compatibility" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb" />
+    <Compile Include="Brancher_Cond.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClsFilename.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clsSendToWinhex.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clsStrCat.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commandline.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRC_Adler32.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ext_ListView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="E_ITEM.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="E_SETQ.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FasCommando.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FasFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FasFunction.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fas_Brancher.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fas_file.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fas_LVar.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormExt_MostTop.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="frmfunc.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmfunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmfunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInspector.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmInspector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInspector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlog.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmlog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmlog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>FrmSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStrings.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmStrings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStrings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LspFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod_Array.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod_log.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Stack.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StringReader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_ENAME.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_EXRXSUBR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_FILE.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_Helper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_INT.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_LIST.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_NIL.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_PAGETB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_PICKSET.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_REAL.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_SAFEARRAY.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_STR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_SUBR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_SYM.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_USUBR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_VARIANT.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="T_VLA-object.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UTF8.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VLXSpliter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="About.resX">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmfunc.resX">
+      <DependentUpon>frmfunc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInspector.resX">
+      <DependentUpon>frmInspector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlog.resX">
+      <DependentUpon>frmlog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resX">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.resX">
+      <DependentUpon>FrmSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStrings.resX">
+      <DependentUpon>frmStrings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="Fas-Disam.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
